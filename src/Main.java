@@ -2,12 +2,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    //Creat a recipe program with a menu to add new recipe, display all recipes, and remove a recipe.
-    //The recipe should contain title, list, ingredients, instructions.
-    //Use OOP to write the program.
-    //Generics
-    //JUnit test
-    //Git
+    //@TODO to creat a recipe program with a menu to add new recipe, display all recipes, and remove a recipe.
+
 private static RecipesManager<OrientalKitchenRecipes> recipeMenu = new RecipesManager();
 private static Scanner scanner = new Scanner(System.in);
 
@@ -65,6 +61,7 @@ public static void main(String[] args) {
      }
   }
 //Method to add recipes
+//@TODO the recipe should contain title, list, ingredients, instructions.
 public static void addRecipe(){
 
 

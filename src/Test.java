@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
+//@TODO at least 3 JUnit tests
 class RecipesManagerTest {
     private RecipesManager<OrientalKitchenRecipes> recipesManager;
 
