@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+//@TODO to use OOP to write the program.
 abstract class OrientalKitchen {
     private String name;
     private List<String> ingredients;
@@ -46,7 +47,7 @@ class OrientalKitchenRecipes extends OrientalKitchen {
 
     private String description;
 
-    //Constructor
+
     public OrientalKitchenRecipes(String name, String description, List<String> ingredients, String instructions, String category) {
         super(name, ingredients, instructions, category);
         this.description = description;
@@ -75,7 +76,7 @@ class OrientalKitchenRecipes extends OrientalKitchen {
 
     }
 
-
+    //@TODO inheritance on different category
     public static class MainDishRecipes extends OrientalKitchenRecipes {
         public MainDishRecipes(String name, String description, List<String> ingredients, String instructions) {
             super(name, description, ingredients, instructions, "Main Dishes");
@@ -101,7 +102,8 @@ class OrientalKitchenRecipes extends OrientalKitchen {
     }
 
 }
-//Modify RecipesManager to use generics
+
+//@TODO Generics: RecipesManager => T
 class RecipesManager<T extends OrientalKitchenRecipes> {
     private ArrayList<T> recipes;
 
