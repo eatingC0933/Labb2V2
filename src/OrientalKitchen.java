@@ -2,55 +2,55 @@ import java.util.ArrayList;
 import java.util.List;
 
 //@TODO to use OOP to write the program.
-abstract class OrientalKitchen {
+public interface OrientalKitchen {
+    String getName();
+
+    List<String> getIngredients();
+
+    String getInstructions();
+
+    String getCategory();
+
+    void displayRecipeDetails();
+
+}
+
+class OrientalKitchenRecipes implements OrientalKitchen {
+
     private String name;
     private List<String> ingredients;
     private String instructions;
     private String category;
+    private String description;
 
-
-    public OrientalKitchen(String name, List<String> ingredients, String instructions, String category) {
+    //Constructor
+    public OrientalKitchenRecipes(String name, String description, List<String> ingredients, String instructions, String category) {
         this.name = name;
+        this.description = description;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.category = category;
-
     }
-//Getters
-    public String getName() {
 
+    //implement getters from the interface
+    @Override
+    public String getName() {
         return name;
     }
 
+    @Override
     public List<String> getIngredients() {
         return ingredients;
     }
 
+    @Override
     public String getInstructions() {
         return instructions;
     }
 
+    @Override
     public String getCategory() {
         return category;
-    }
-    // Abstract method to display recipes
-    public abstract void displayRecipeDetails();
-}
-
-
-
-
-
-
-
-class OrientalKitchenRecipes extends OrientalKitchen {
-
-    private String description;
-
-
-    public OrientalKitchenRecipes(String name, String description, List<String> ingredients, String instructions, String category) {
-        super(name, ingredients, instructions, category);
-        this.description = description;
     }
 
     public String getDescription() {
@@ -76,7 +76,7 @@ class OrientalKitchenRecipes extends OrientalKitchen {
 
     }
 
-    //@TODO inheritance on different category
+    //Subclass for different recipe categories
     public static class MainDishRecipes extends OrientalKitchenRecipes {
         public MainDishRecipes(String name, String description, List<String> ingredients, String instructions) {
             super(name, description, ingredients, instructions, "Main Dishes");
